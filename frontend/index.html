@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MeetMind — AI Meeting Intelligence</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="brand">MeetMind</div>
+    <span class="tagline">AI Meeting Intelligence</span>
+  </nav>
+
+  <div class="container">
+
+    <!-- Upload Section -->
+    <div class="card upload-card">
+      <h2>Upload a Meeting</h2>
+      <p class="subtext">Supports MP3, MP4, WAV, M4A — up to 500MB</p>
+
+      <div class="form-group">
+        <input type="text" id="meetingTitle" placeholder="Meeting title (e.g. Team Standup June 12)" />
+      </div>
+
+      <div class="drop-zone" id="dropZone">
+        <p>Drag & drop your audio/video file here</p>
+        <p>or</p>
+        <label class="btn-outline" for="fileInput">Browse File</label>
+        <input type="file" id="fileInput" accept=".mp3,.mp4,.wav,.m4a,.ogg,.webm" hidden />
+        <p id="selectedFile" class="file-name"></p>
+      </div>
+
+      <button class="btn-primary" id="uploadBtn" onclick="uploadFile()">Upload & Process</button>
+
+      <div id="uploadStatus" class="status-bar" style="display:none;"></div>
+    </div>
+
+    <!-- Meetings List -->
+    <div class="card">
+      <div class="section-header">
+        <h2>Your Meetings</h2>
+        <button class="btn-sm" onclick="loadMeetings()">Refresh</button>
+      </div>
+
+      <div id="meetingsList">
+        <p class="empty-text">No meetings yet. Upload one above.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

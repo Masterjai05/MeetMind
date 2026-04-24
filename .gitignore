@@ -1,0 +1,24 @@
+# Secrets
+backend/.env
+
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Database
+backend/meetmind.db
+
+# Uploaded files
+backend/uploads/
+
+# Vector index cache
+*.faiss
+
+# VS Code
+.vscode/
+
+# Windows
+Thumbs.db
+desktop.ini

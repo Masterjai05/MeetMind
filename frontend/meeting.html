@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MeetMind — Meeting Detail</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="back-btn">← Back</a>
+    <div class="brand">MeetMind</div>
+    <span></span>
+  </nav>
+
+  <div class="container">
+
+    <div class="card" id="meetingHeader">
+      <h1 id="meetingTitle">Loading...</h1>
+      <span id="meetingStatus" class="badge"></span>
+      <p id="meetingDate" class="subtext"></p>
+    </div>
+
+    <!-- Summary -->
+    <div class="card" id="summaryCard">
+      <h2>Summary</h2>
+      <p id="summaryText" class="body-text">Processing...</p>
+    </div>
+
+    <!-- Action Items + Decisions -->
+    <div class="two-col">
+      <div class="card">
+        <h2>Action Items</h2>
+        <ul id="actionItemsList" class="item-list"></ul>
+      </div>
+      <div class="card">
+        <h2>Key Decisions</h2>
+        <ul id="decisionsList" class="item-list"></ul>
+      </div>
+    </div>
+
+    <!-- Chat Section -->
+    <div class="card chat-card">
+      <h2>Chat with this Meeting</h2>
+      <p class="subtext">Ask anything — "What did we decide about the deadline?" or "Who owns the design task?"</p>
+
+      <div class="chat-messages" id="chatMessages">
+        <div class="chat-bubble assistant">Ask me anything about this meeting.</div>
+      </div>
+
+      <div class="chat-input-row">
+        <input type="text" id="chatInput" placeholder="Type your question..." onkeydown="if(event.key==='Enter') sendMessage()" />
+        <button class="btn-primary" onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+
+    <!-- Full Transcript -->
+    <div class="card">
+      <h2>Full Transcript</h2>
+      <div id="transcriptText" class="transcript-box">Processing transcript...</div>
+    </div>
+
+  </div>
+
+  <script src="js/meeting.js"></script>
+</body>
+</html>
