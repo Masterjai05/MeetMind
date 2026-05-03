@@ -32,6 +32,25 @@
         <p id="selectedFile" class="file-name"></p>
       </div>
 
+      <!-- Speaker Names Section -->
+      <div class="form-group" style="margin-top: 16px;">
+        <label style="font-weight:500; font-size:14px;">
+          Speaker Names <span style="font-weight:400; color:#888;">(optional)</span>
+        </label>
+        <p style="font-size:12px; color:#888; margin-top:4px;">
+          Whoever speaks first = Speaker A, second = Speaker B, and so on.
+          Add a field for each participant and enter their name.
+        </p>
+        <div id="speakerNamesContainer" style="margin-top: 8px;"></div>
+        <button
+          type="button"
+          onclick="addSpeaker()"
+          style="margin-top:8px; padding:6px 14px; border:1px dashed #aaa; background:transparent; border-radius:6px; font-size:13px; cursor:pointer; color:#555;"
+        >
+          + Add Speaker
+        </button>
+      </div>
+
       <button class="btn-primary" id="uploadBtn" onclick="uploadFile()">Upload & Process</button>
 
       <div id="uploadStatus" class="status-bar" style="display:none;"></div>

@@ -7,7 +7,7 @@ load_dotenv()
 from groq import Groq
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 
 # ── Config ──
 GROQ_MODEL = "llama-3.3-70b-versatile"   # Free, fast, generous limits

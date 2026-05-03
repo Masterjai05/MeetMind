@@ -420,3 +420,105 @@ input[type="text"]:focus {
   animation: pulse 1.5s infinite;
   color: #8892b0;
 }
+
+/* ── MODAL DIALOG ── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.15s ease;
+}
+
+.modal-box {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 32px 28px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  animation: slideUp 0.2s ease;
+}
+
+.modal-icon {
+  width: 48px;
+  height: 48px;
+  background: #fdecea;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  font-size: 22px;
+}
+
+.modal-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a2e;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.modal-message {
+  font-size: 14px;
+  color: #8892b0;
+  text-align: center;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.modal-actions .btn-cancel {
+  flex: 1;
+  padding: 11px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  background: transparent;
+  color: #8892b0;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.modal-actions .btn-cancel:hover {
+  border-color: #4f8ef7;
+  color: #4f8ef7;
+}
+
+.modal-actions .btn-delete {
+  flex: 1;
+  padding: 11px;
+  border: none;
+  border-radius: 8px;
+  background: #e05454;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s;
+}
+
+.modal-actions .btn-delete:hover {
+  background: #c0392b;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}

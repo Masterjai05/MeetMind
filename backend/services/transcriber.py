@@ -20,9 +20,9 @@ def transcribe_audio(filepath: str) -> str:
     print(f"[INFO] Uploading to AssemblyAI: {filepath}")
 
     config = aai.TranscriptionConfig(
-        speaker_labels=True,        # enables diarization
-        speakers_expected=None,     # auto-detect number of speakers
-        language_code="en",
+        speaker_labels=True,
+        speakers_expected=None,
+        speech_models=["universal-2"],
     )
 
     transcriber = aai.Transcriber(config=config)
@@ -45,7 +45,6 @@ def _format_transcript(transcript) -> str:
           Thanks for joining.
     """
     if not transcript.utterances:
-        # Fallback — no diarization, return plain text
         print("[WARN] No utterances found. Returning plain transcript.")
         return transcript.text or ""
 
